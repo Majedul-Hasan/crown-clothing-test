@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import CatrIcon from '../catrIcon/catrIcon';
 
+import {createStructuredSelector} from 'reselect'
+
 import CartDropdoen from '../cartDropdown/cartDropdown'
+
+import {selectCartHidden} from '../../redux/cart/cart.selector'
+import {selectCurrentUser} from '../../redux/user/user.selector'
+
+
 
 
 import {ReactComponent as Logo } from '../../../src/assets/crown.svg';
@@ -25,7 +32,7 @@ const Header =({currentUser, hidden})=>(
          <Link className="option" to='/shop'>
             shop
          </Link>
-         <Link className="option" to='/shop'>
+         <Link className="option" to='/contact'>
             contact
          </Link>
           {currentUser ? (
@@ -47,9 +54,9 @@ const Header =({currentUser, hidden})=>(
 )
 
 
-const mapStateTOProps = ({user: {currentUser}, cart: {hidden}}) => ({
-   currentUser,
-   hidden
+const mapStateTOProps = createStructuredSelector({
+   currentUser: selectCurrentUser,
+   hidden: selectCartHidden
 })
 
 
