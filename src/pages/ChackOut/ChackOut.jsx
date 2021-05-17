@@ -30,7 +30,7 @@ const ChackOutPage= ({total, cartItems})=>(
          </div>
       
          <div className="header-block">
-            <span>Remove  &#10005;</span>
+            <span>Remove</span>
          </div>
       </div>
       
