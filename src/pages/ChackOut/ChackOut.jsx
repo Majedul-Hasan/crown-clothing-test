@@ -7,6 +7,8 @@ import {selectCartItems, selectCartTotal} from '../../redux/cart/cart.selector'
 
 import ChackOutItems from "../ChackOutItems/ChackOutItems";
 
+import StripeCheckoutButton from "../../components/stripe-button/stripe-button";
+
 import './ChackOut.scss'
 
 
@@ -41,8 +43,19 @@ const ChackOutPage= ({total, cartItems})=>(
          )
       }
       <div className="total">
-         <span>Total: ${total}</span>
+        Total: ${total}
+
       </div>
+      <div className="testwarning">
+         *Please use the following test credit card for payment* 
+         <br />
+         4242 4242 4242 4242  -exp 01/22 - cvv 123
+
+
+          
+
+      </div>
+      <StripeCheckoutButton price={total} />
 
       
             
