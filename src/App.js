@@ -3,6 +3,9 @@ import './App.css';
 import Homepage from './pages/homepage/homepage'
 import { Route,  Switch, Redirect } from 'react-router-dom';
 import ShopPage from './pages/shopPage/ShopPage';
+import ContactPage from './pages/contact/contact-page';
+
+
 
 
 import {connect} from 'react-redux'; //higherorder component
@@ -92,6 +95,8 @@ class App extends React.Component{
 
       <Route exact path='/' component={Homepage} />
       <Route   path='/shop' component={ShopPage} />
+      <Route   path='/contact' component={ContactPage} />
+
       {/* <Route   path='/signin' component={Signinandsignup} /> */}
        <Route exact   path='/signin' render={()=>this.props.currentUser ? (<Redirect to='/' />):  (<Signinandsignup />)} />
       <Route exact  path='/chackout' component={ChackOutPage} />
